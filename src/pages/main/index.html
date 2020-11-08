@@ -13,7 +13,7 @@
     <title>DLK</title>
   </head>
   <body>
-    @@include('header/index.html')
+    @@include("header/index.html")
     <main class="main container">
       <h1 class="visible-hidden">DLK main page</h1>
       <section class="promo-block block">
@@ -41,18 +41,22 @@
       <section class="product-block block">
           <h2 class="block-title">CATEGORY PRODUCTS</h2>
           <ul class="product-block-list">
-              <li class="product-block-item apparel-kids">
-                  <a href="#" class="product-block-link">APPAREL KIDS</a>
-              </li>
-              <li class="product-block-item holiday-shop">
-                  <a href="#" class="product-block-link">HOLIDAY SHOP</a>
-              </li>
-              <li class="product-block-item toys">
-                  <a href="toys.html" class="product-block-link">TOYS</a>
-              </li>
-              <li class="product-block-item accessories">
-                  <a href="#" class="product-block-link">ACCESSORIES</a>
-              </li>
+            @@include("product-item/index.html",{
+                "image-class": "apparel-kids",
+                "text": "APPAREL KIDS"
+            })
+            @@include("product-item/index.html",{
+                "image-class": "holiday-shop",
+                "text": "HOLIDAY SHOP"
+            })
+            @@include("product-item/index.html",{
+                "image-class": "toys",
+                "text": "TOYS"
+            })
+            @@include("product-item/index.html",{
+                "image-class": "accessories",
+                "text": "ACCESSORIES"
+            })
           </ul>
           <div class="product-block-nav">
               <button class="button-scroll scroll-left"></button>
@@ -122,7 +126,7 @@
           </section>
       </div>
   </main>
-    @@include('footer/index.html')
+    @@include("footer/index.html")
     <script src="scripts.js"></script>
   </body>
 </html>
